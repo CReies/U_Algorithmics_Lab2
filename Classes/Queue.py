@@ -1,22 +1,26 @@
 class Queue:
 	def __init__(self) -> None:
-		self.queue = []
+		self.data = []
+
+	def getData(self):
+		return self.data
 	
 	def queue(self, value: int) -> None:
-		self.queue.append(value)
+		self.data.append(value)
 	
 	def dequeue(self, quantity: int) -> None:
-		self.queue = self.queue[quantity:]
+		self.data = self.data[quantity:]
 
 	def modify(self, value: int,) -> None:
-		for i in range(len(self.queue)):
-			if self.queue[i] == value: break
+		for i in range(len(self.data)):
+			if self.data[i] == value: break
 			else: 
 				self.dequeue(1)
 		
 	
 	def is_empty(self) -> bool:
-		return self.queue == []
+		return self.data == []
 	
 	def print(self) -> None:
-		print(self.queue)
+		print(self.data)
+
