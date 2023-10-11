@@ -1,18 +1,21 @@
 class Stack:
 	def __init__(self) -> None:
-		pass
+		self.stack = []
 
-	def create():
-		return []
+	def stack(self, value: int) -> None:
+		self.stack.append(value)
 	
-	def stack():
-		return []
+	def unstack(self, quantity: int) -> None:
+		self.stack = self.stack[:quantity]
+
+	def modify(self, value: int) -> None:
+		for i in range(len(self.queue)):
+			if self.queue[-i-1] == value: break
+			else: 
+				self.unstack(1)
 	
-	def unstack():
-		return []
+	def is_empty(self) -> bool:
+		return self.stack == []
 	
-	def is_empty():
-		return True
-	
-	def print():
-		return []
+	def print(self) -> None:
+		print(self.stack)
