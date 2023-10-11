@@ -12,16 +12,13 @@ def clearScreen():
 	for i in range(os.get_terminal_size().lines):
 		print('\n')
 
-def pressEnter():
-	input('Presione enter para continuar...')
+def enterToContinue():
+	input('\nPresione enter para continuar...')
+	clearScreen()
 
 def invalidOption():
 	print('Opción inválida')
-	pressEnter()
-	clearScreen()
-
-def enterToContinue():
-	input('\nPresione enter para continuar...')
+	enterToContinue()
 	clearScreen()
 
 while True:
