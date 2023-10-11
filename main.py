@@ -20,6 +20,10 @@ def invalidOption():
 	pressEnter()
 	clearScreen()
 
+def enterToContinue():
+	input('\nPresione enter para continuar...')
+	clearScreen()
+
 while True:
 	clearScreen()
 	print('Bienvenido al programa de pilas y colas')
@@ -89,24 +93,30 @@ while True:
 	printSeparator()
 
 	if operation == '1':
-		value = input('Ingrese el valor que desea agregar: ')
+		value = int(input('Ingrese el valor que desea agregar: '))
 		if isinstance(selectedStructure, Stack):
 			selectedStructure.stack(value)
 		elif isinstance(selectedStructure, Queue):
 			selectedStructure.queue(value)
+		selectedStructure.print()
+		enterToContinue()
 
 	elif operation == '2':
-		value = input('Ingrese la cantidad de elementos que desea eliminar: ')
+		value = int(input('Ingrese la cantidad de elementos que desea eliminar: '))
 		if isinstance(selectedStructure, Stack):
 			selectedStructure.unstack(value)
 		elif isinstance(selectedStructure, Queue):
 			selectedStructure.dequeue(value)
+		selectedStructure.print()
+		enterToContinue()
 
 	elif operation == '3':
-		value = input('Ingrese el valor con el que desea modificar: ')
+		value = int(input('Ingrese el valor con el que desea modificar: '))
 		selectedStructure.modify(value)
 		selectedStructure.print()
+		enterToContinue()
 
 	elif operation == '4':
 		print(f'La {structure} está vacía') if selectedStructure.is_empty() else print(f'La {structure} no está vacía')
+		enterToContinue()
 	
