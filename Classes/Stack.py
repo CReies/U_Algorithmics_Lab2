@@ -12,10 +12,10 @@ class Stack:
 		self.data = self.data[quantity:]
 
 	def modify(self, value: int) -> None:
-		for i in range(len(self.queue)):
-			if self.data[-i-1] == value: break
-			else: 
-				self.unstack(1)
+		if self.data[-1] == value: return
+		else: 
+			self.unstack(1)
+			self.modify(value)
 	
 	def is_empty(self) -> bool:
 		return self.data == []
