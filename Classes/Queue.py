@@ -9,7 +9,7 @@ class Queue:
 		self.queue = self.queue[:quantity]
 	
 	def is_empty(self) -> bool:
-		return True
+		return self.queue == []
 	
-	def print(self) -> str:
-		return []
+	def print(self) -> None:
+		print(self.queue)
