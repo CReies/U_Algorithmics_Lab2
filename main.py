@@ -5,6 +5,8 @@ from Classes.Stack import Stack
 queues : list[Queue] = []
 stacks : list[Stack] = []
 
+# Initial methods to print and clear the screen
+
 def printSeparator():
 	print('\n====================\n')
 
@@ -21,11 +23,15 @@ def invalidOption():
 	enterToContinue()
 	clearScreen()
 
+# Main loop
+
 while True:
 	clearScreen()
 	print('Bienvenido al programa de pilas y colas')
 
 	printSeparator()
+
+	# Structure type selection
 
 	print('Seleccione el tipo de estructura que desea utilizar')
 	structure = input('1. Pila\n2. Cola\n3. Salir\n')
@@ -54,6 +60,8 @@ while True:
 
 	printSeparator()
 
+	# Structure selection
+
 	selectedStructure = input(f'Seleccione la {structure} que desea utilizar o ingrese 0 para crear una nueva: ')
 	
 	if structure == 'Pila' and int(selectedStructure) > len(stacks) or structure == 'Cola' and int(selectedStructure) > len(queues):
@@ -75,6 +83,8 @@ while True:
 
 	printSeparator()
 
+	# Operation selection
+
 	print('Seleccione la operación que desea realizar')
 	operation = input('1. Agregar\n2. Eliminar\n3. Modificar\n4. Está vacia\n5. Salir\n')
 
@@ -88,6 +98,8 @@ while True:
 		break
 
 	printSeparator()
+
+	# Operation execution
 
 	if operation == '1':
 		value = int(input('Ingrese el valor que desea agregar: '))
