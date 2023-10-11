@@ -9,7 +9,7 @@ class Queue:
 		self.data.append(value)
 	
 	def dequeue(self, quantity: int) -> None:
-		self.data = self.data[quantity:]
+		self.data = self.data[:-quantity]
 
 	def modify(self, value: int,) -> None:
 		for i in range(len(self.data)):
